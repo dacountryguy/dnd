@@ -1,0 +1,65 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*	-INFORMATION-
+	Subject:	Race: Tarkir Loxodon 
+	Effect:	adds race
+	Date:		2020-10-29 (sheet v13)
+*/
+
+
+
+SourceList["CL:OGA"] = {
+	name : "HB 5e",
+	abbreviation : "HB:5e",
+	group : "D&D wiki",
+	url : "https://www.dandwiki.com/wiki/Loxodon,_Variant_(5e_Race)",
+	date : "2017/10/11"
+};
+
+RaceList["Tarkir Loxodon"] = {
+	regExpSearch : /grung/i,
+	name : "Tarkir Loxodon",
+	source : [["HB:5e", 4]],
+	plural : "Loxodons",
+	size : 5,
+	speed : {
+		walk : { spd: 25, enc: 15 },
+		climb : { spd: 25, enc: 15 }
+	},
+	languageProfs : ["Common", "Giant"],
+	savetxt :  { adv_vs : ["cold"] },
+	skills : ["Perception"],
+	weaponprofs : [false, false, ["trunk"]],
+  age : " reach maturity in teens, come into their own in their sixties and live around 200 years",
+	height : " range from 6 to 7 feet tall",
+	weight : " weigh around 350-500 lb",
+	scores : [2, 0, 2, 0, 0, 0],
+	features : {"Stampede" : {
+			name : "Stampede",
+			minlevel : 1,
+			usages : 1,
+			recovery : "short rest",
+			tooltip : "Using dash action can charge through an enemy and pass to the other side if they are same size or smaller. Enemy needs to throw athletic or acrobatic check DC 8+proficency+strength modifier. Deals 1D6 bludgeoning damage and knocks enemy prone.",
+			action : ["action", ""]
+		},
+    },
+  trait : "Tarkir Loxodon (+2 Strength, +2 Constitution)\nThird arm: Trunk can lift up to 20 pounds and can use a lantern or tourch as well as preform simple tasks.\nArctic Scout: Acclimated to cold regions considered proficent in wisdom(survival) If already profiecent can add double proficency bonus. \nArtic Wool : Adv on saving throw cold weather \nPowerful build : Count as one size larger when determing carrying capacity. \nAnimal connection : Can communicate with simple gestures and trunk sounds with elephants and mammoths. "
+};
+
+WeaponsList["Tusks"] = {
+	regExpSearch : /^(?=.*Tusks).*$/i,
+	name : "Tusks",
+	source : ["WH:AU", 4],
+	ability : 1,
+	type : "Natural",
+	damage : [1, 6, "piercing"],
+	range : "Melee",
+	description : "",
+	abilitytodamage : true,
+	monkweapon : false
+};
